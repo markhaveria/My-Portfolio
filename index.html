@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Name | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<header>
+  <h1>John Mark Haveria</h1>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="home" class="hero fade-in">
+    <div class="container">
+    <img src="./IMAGES/GIlbert.jpg" class="avatar" alt="Photo">
+    </div>
+  <h2>Hello, I'm John Mark Haveria</h2>
+  <p>Aspiring Web Developer</p>
+  <button class="btn" onclick="scrollToProjects()">About me</button>
+</section>
+
+<section id="projects" class="fade-in">
+  <h2>About me</h2>
+  <div class="projects">
+    <div class="card">
+      <h3>About me</h3>
+      <p>Name: John Mark H. Haveria</p>
+      <p>Age: 21</p>
+      <p>
+I am a Bachelor of Science in Computer Science student who enjoys building clean,
+modern, and user-friendly websites. I’m passionate about learning how real-world
+web applications are designed and developed.
+</p>
+    </div>
+    <div class="card">
+      <h3>My skills</h3>
+      <p>HTML</p>
+      <p>CSS</p>
+      <p>Javascript</p>
+      <p>Programming Basics</p>
+    </div>
+    <div class="card">
+      <h3>Projects/Activities</h3>
+      <p>Labority exercises</p>
+      <p>Mini Projects</p>
+      <p>Group Projects</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="fade-in">
+  <h2>Contact Me</h2>
+  <p>Email: johnmarkhaveria1234@email.com</p>
+</section>
+
+<footer>
+  © 2026 John Mark Haveria | All Rights Reserved
+</footer>
+
+<script>
+  function scrollToProjects() {
+    document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
+  }
+
+
+  const faders = document.querySelectorAll(".fade-in");
+
+  const appearOnScroll = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.3 });
+
+  faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+  });
+</script>
+
+</body>
+</html>
